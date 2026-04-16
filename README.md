@@ -17,6 +17,12 @@
 go get github.com/kiry163/outfmt
 ```
 
+发布后按版本安装：
+
+```bash
+go get github.com/kiry163/outfmt@v0.1.0
+```
+
 ## 适用场景
 
 - CLI 工具统一支持 `--output table|yaml|json`
@@ -200,6 +206,12 @@ ID  Profile.City  Profile.Active  Meta.region  Meta.zone  Tags
 - `Render(w io.Writer, data any, format Format, opts ...Option) error`
 - `Marshal(data any, format Format, opts ...Option) ([]byte, error)`
 - `Format`: `outfmt.Table`、`outfmt.YAML`、`outfmt.JSON`
+
+## 发布相关
+
+- 变更记录见 [CHANGELOG.md](./CHANGELOG.md)
+- 发布步骤见 [RELEASING.md](./RELEASING.md)
+- 许可证见 [LICENSE](./LICENSE)
 
 ## 当前边界
 

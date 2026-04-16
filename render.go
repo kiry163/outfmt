@@ -9,6 +9,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// Render writes data to w using the selected output format.
 func Render(w io.Writer, data any, format Format, opts ...Option) error {
 	if w == nil {
 		return fmt.Errorf("outfmt: writer is nil")
@@ -23,6 +24,7 @@ func Render(w io.Writer, data any, format Format, opts ...Option) error {
 	return err
 }
 
+// Marshal renders data into a byte slice using the selected output format.
 func Marshal(data any, format Format, opts ...Option) ([]byte, error) {
 	if err := format.Validate(); err != nil {
 		return nil, err

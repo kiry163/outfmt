@@ -1,5 +1,6 @@
 package outfmt
 
+// Option configures rendering behavior.
 type Option func(*renderOptions)
 
 type renderOptions struct {
@@ -14,6 +15,7 @@ func defaultRenderOptions() renderOptions {
 	}
 }
 
+// WithJSONIndent sets the indentation used by JSON output.
 func WithJSONIndent(indent string) Option {
 	return func(opts *renderOptions) {
 		if indent != "" {
@@ -22,6 +24,7 @@ func WithJSONIndent(indent string) Option {
 	}
 }
 
+// WithEmptyValue sets the placeholder used for empty table cells.
 func WithEmptyValue(value string) Option {
 	return func(opts *renderOptions) {
 		opts.emptyValue = value
